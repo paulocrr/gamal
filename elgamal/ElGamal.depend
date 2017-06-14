@@ -1,0 +1,29 @@
+# depslib dependency file v1.0
+1497476074 source:f:\trabajos ucsp\semestre iii\algebra abstracta\elgamal\elgamal.cpp
+	"headerElGamal.h"
+
+1497470413 f:\trabajos ucsp\semestre iii\algebra abstracta\elgamal\headerelgamal.h
+	<string>
+	<NTL/ZZ.h>
+	"headMathLib.h"
+	<sstream>
+
+1496892917 f:\trabajos ucsp\semestre iii\algebra abstracta\elgamal\headmathlib.h
+	<iostream>
+	<NTL/ZZ.h>
+	<NTL/vector.h>
+	<chrono>
+	<vector>
+	<stdio.h>
+	<stdlib.h>
+	<ctime>
+	<time.h>
+	<math.h>
+
+1497475579 source:f:\trabajos ucsp\semestre iii\algebra abstracta\elgamal\main.cpp
+	<iostream>
+	"headerElGamal.h"
+
+1497466165 source:f:\trabajos ucsp\semestre iii\algebra abstracta\elgamal\mathlib.cpp
+	"headMathLib.h"
+
