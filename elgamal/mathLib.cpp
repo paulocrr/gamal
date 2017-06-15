@@ -266,6 +266,67 @@ ZZ mathLib::fingGen(ZZ p){
         }
     }
     return g;
+}
 
+vector<ZZ>mathLib::RndNumber(){
+    int pc1[]={57,49,41,33,25,17,9,1,58,50,42,34,26,18,10,2,59,51,43,35,27,19,11,3,60,52,44,36,63,55,47,39,31,23,15,7,62,54,46,38,30,22,14,6,61,53,45,37,29,21,13,5,28,20,12,4};
+    int pc2[]={14,17,11,24,1,5,3,28,15,6,21,10,23,19,12,4,26,8,16,7,27,20,13,2,41,52,31,37,47,55,30,40,51,45,33,48,44,49,39,56,34,53,46,42,50,36,29,32};
+    int vueltas[] = {1,1,2,2,2,2,2,2,1,2,2,2,2,2,2,1};
+    bitset<64> k;
+    bitset<56> k1;
+    bitset<28> c;
+    bitset<28> d;
+    bitset<48> num;
+    vector<ZZ>res;
+    long n = 0;
+    ZZ result(0);
 
+    for(int i = 0;i<64;i++){
+        int * foo;
+        foo = new  int [1];
+        int val = getModInt((*foo)*time(0),2);
+        k[i]=val;
+        delete[] foo;
+    }
+    for(int i =0;i<16;i++){
+        for(int i=55;i>=0;i--){
+            k1[i]=k[pc1[i]];
+        }
+
+        for(int i=0;i<28;i++){
+            c[i]=k1[i];
+            d[i]=k1[i+28];
+        }
+
+        int first;
+
+        for(int j=0;j<vueltas[i];j++){
+            first = c[0];
+            c<<1;
+            c[27]=first;
+            first = d[0];
+            d<<1;
+            d[27]=first;
+            for(int p=28;p>=0;p--){
+                k1[p]=c[p];
+                k1[p+28] = d[p];
+            }
+
+            for(int l=47;l>=0;l--){
+                num[l]=k1[pc2[l]];
+            }
+            num[0]=1;
+            unsigned long long t = num.to_ullong();
+            //cout << t <<endl;
+            for (int i = 47;i>=0;i--){
+                if (num[i]){
+                    result+=power2_ZZ(n);
+                }
+                n = n + 1;
+            }
+            res.push_back(result);
+        }
+        cout<<i<<": "<<result<<endl;
+    }
+    return res;
 }

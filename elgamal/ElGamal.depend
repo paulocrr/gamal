@@ -27,3 +27,32 @@
 1497466165 source:f:\trabajos ucsp\semestre iii\algebra abstracta\elgamal\mathlib.cpp
 	"headMathLib.h"
 
+1497510084 source:f:\trabajos ucsp\semestre iii\algebra abstracta\gamal\elgamal\mathlib.cpp
+	"headMathLib.h"
+
+1497509249 f:\trabajos ucsp\semestre iii\algebra abstracta\gamal\elgamal\headmathlib.h
+	<iostream>
+	<NTL/ZZ.h>
+	<NTL/vector.h>
+	<chrono>
+	<vector>
+	<stdio.h>
+	<stdlib.h>
+	<ctime>
+	<time.h>
+	<math.h>
+	<bitset>
+
+1497476363 source:f:\trabajos ucsp\semestre iii\algebra abstracta\gamal\elgamal\elgamal.cpp
+	"headerElGamal.h"
+
+1497470413 f:\trabajos ucsp\semestre iii\algebra abstracta\gamal\elgamal\headerelgamal.h
+	<string>
+	<NTL/ZZ.h>
+	"headMathLib.h"
+	<sstream>
+
+1497509275 source:f:\trabajos ucsp\semestre iii\algebra abstracta\gamal\elgamal\main.cpp
+	<iostream>
+	"headerElGamal.h"
+

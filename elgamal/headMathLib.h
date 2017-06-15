@@ -8,6 +8,7 @@
 #include <ctime>
 #include <time.h>
 #include <math.h>
+#include <bitset>
 using namespace std;
 using namespace NTL;
 class mathLib{
@@ -25,4 +26,5 @@ public:
     bool fermatTest(int numTests,ZZ pseudoPrime);
     ZZ chineseReminder(vector<ZZ> ai,vector<ZZ> pi,ZZ n,ZZ i);
     ZZ fingGen(ZZ p);
+    vector<ZZ> RndNumber();
 };

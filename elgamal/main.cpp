@@ -7,7 +7,7 @@ void implementElGamal(){
     string mensaje="Nos movemos entre las sombras para servir a la luz somos asesinos";
     ZZ e1,e2,p;
     string c2;
-    gamal receptor(16);
+    gamal receptor(128);
     while(true){
         cout<<"Quiere decifrar presione 1: "<<endl;
         cout<<"Quiere cifrar presione 2: "<<endl;
@@ -38,7 +38,8 @@ void implementElGamal(){
 }
 int main()
 {
-    implementElGamal();
-    cout << "Hello world!" << endl;
+    //implementElGamal();
+    mathLib m;
+    m.RndNumber();
     return 0;
 }
