@@ -288,18 +288,18 @@ vector<ZZ>mathLib::RndNumber(){
         k[i]=val;
         delete[] foo;
     }
-    for(int i =0;i<16;i++){
-        for(int i=55;i>=0;i--){
-            k1[i]=k[pc1[i]];
-        }
 
-        for(int i=0;i<28;i++){
-            c[i]=k1[i];
-            d[i]=k1[i+28];
-        }
+    for(int i=55;i>=0;i--){
+        k1[i]=k[pc1[i]];
+    }
 
-        int first;
+    for(int i=0;i<28;i++){
+        c[i]=k1[i];
+        d[i]=k1[i+28];
+    }
 
+    int first;
+     for(int i =0;i<16;i++){
         for(int j=0;j<vueltas[i];j++){
             first = c[0];
             c<<1;
