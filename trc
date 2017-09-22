@@ -70,8 +70,11 @@ int chineseReminder(vector<int> ai,vector<int> pi){
 		mi = p/pi[i];
 		cout<<"a"<<i+1<<": "<<ai[i]<<endl;
 		cout<<"M"<<i+1<<": "<<p<<"/"<<pi[i]<<"="<<mi<<endl;
-		
-		inv = Inversa(mi,pi[i]);
+		if(algEuclides(mi,pi[i])==1){
+			inv = Inversa(mi,pi[i]);
+		}else{
+			return 0;
+		}
 		cout<<"y"<<i+1<<": "<<inv<<endl;
 		temp=ai[i]*inv*mi;
 		res+=temp;
@@ -93,6 +96,11 @@ int main (int argc, char *argv[]) {
 	b.push_back(16);
 	b.push_back(22);
 	b.push_back(25);
-	cout<<"Respuesta: "<<chineseReminder(a,b)<<endl;
+	if(chineseReminder(a,b)){
+		cout<<"Respuesta: "<<chineseReminder(a,b)<<endl;
+	}else{
+		cout<<"No existe respuesta porque no existe inversa"<<endl;
+	}
+	
 	return 0;
 }
