@@ -1,0 +1,98 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+int getMod(int d, int a){
+	int q,r;
+	q = d/a;
+	r = d-(q*a);
+	if(r<0){
+		r+=a;
+	}
+	return r;
+}
+int algEuclides(int a, int b){
+	int m;
+	m = getMod(a,b);
+	while(m!=0){
+		a=b;
+		b=m;
+		m=getMod(a,b);
+	}
+	return b;
+}
+int algEuclidesExt(int a, int b){
+	int x,y,x2,x1,y2,y1,q,r;
+	if(b==0){
+		x2=1;
+	}else{
+		x=0;
+		y=0;
+		x1=0;
+		x2=1;
+		y2=0;
+		y1=1;
+		q=0;
+		r=0;
+		while(b!=0){
+			q = a/b;
+			r=getMod(a,b);
+			x=x2-q*x1;
+			y=y2-q*y1;
+			a=b;
+			b=r;
+			x2=x1;
+			x1=x;
+			y2=y1;
+			y1=y;
+		}
+	}
+	return x2;
+	
+}
+int Inversa(int a,int l){
+	a = algEuclidesExt(a,l);
+	if(a<0){
+		a = a+l;
+	}else if(a>=l){
+		a=getMod(a,l);
+	}
+	return a;
+}
+int chineseReminder(vector<int> ai,vector<int> pi){
+	int p,mi,inv,res,temp;
+	res=0;
+	p=1;
+	for(int i=0;i<pi.size();i++){
+		p *= pi[i];
+	}
+	cout <<"m: "<<p<<endl;
+	for(int i=0;i<pi.size();i++){
+		mi = p/pi[i];
+		cout<<"a"<<i+1<<": "<<ai[i]<<endl;
+		cout<<"M"<<i+1<<": "<<p<<"/"<<pi[i]<<"="<<mi<<endl;
+		
+		inv = Inversa(mi,pi[i]);
+		cout<<"y"<<i+1<<": "<<inv<<endl;
+		temp=ai[i]*inv*mi;
+		res+=temp;
+		if(res>=p){
+			res=getMod(res,p);
+		}
+	}
+	
+	return res;
+}
+int main (int argc, char *argv[]) {
+	vector<int>a;
+	vector<int>b;
+	a.push_back(6);
+	a.push_back(13);
+	a.push_back(9);
+	a.push_back(19);
+	b.push_back(11);
+	b.push_back(16);
+	b.push_back(22);
+	b.push_back(25);
+	cout<<"Respuesta: "<<chineseReminder(a,b)<<endl;
+	return 0;
+}
